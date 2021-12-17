@@ -33,3 +33,10 @@ function Convert2DateTime(date_text){
 // var datetext = $feature.Date;
 var date_text = "Mon Sep 17 13:11:06 +0000 2018";
 return Convert2DateTime(date_text);
+
+
+// binning of values in new attribute field to create histogram in dashboard
+
+var n = $feature.field;
+
+When( n >= 0 && n <= 10, '0-10', n > 10 && n <= 20, '11-20' ... )
