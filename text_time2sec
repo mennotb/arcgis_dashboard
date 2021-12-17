@@ -1,9 +1,0 @@
-function text2sec(time_text){
-    var time_list = Split(time_text, ":");
-    var hour_val = Number(time_list[0]);
-    var min_val = Number(time_list[1]);
-    var sec_val = Number(time_list[2]);
-return hour_val*3600 + min_val*60 + sec_val;
-}
-var time_text = $feature.SwimTime;
-return text2sec(time_text);

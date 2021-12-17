@@ -1,0 +1,35 @@
+// convert time string to integer (seconds)
+
+function text2sec(time_text){
+    var time_list = Split(time_text, ":");
+    var hour_val = Number(time_list[0]);
+    var min_val = Number(time_list[1]);
+    var sec_val = Number(time_list[2]);
+return hour_val*3600 + min_val*60 + sec_val;
+}
+var time_text = $feature.SwimTime;
+return text2sec(time_text);
+
+// convert time string to date
+
+function Convert2DateTime(date_text){
+    var months = {"Jan": 0, "Feb": 1, "Mar": 2,
+                  "Apr": 3, "May": 4, "Jun": 5,
+                  "Jul": 6, "Aug": 7, "Sep": 8,
+                  "Oct": 9, "Nov": 10, "Dec": 11};
+
+    var date_list = Split(date_text, " ");
+    var day_val = Number(date_list[2]);
+    var month_val = months[date_list[1]];
+    var year_val = Number(date_list[5]);
+    var time_text = date_list[3];
+    var time_list = Split(time_text, ":");
+    var hour_val = Number(time_list[0]);
+    var min_val = Number(time_list[1]);
+    var sec_val = Number(time_list[2]);
+    return Date(year_val, month_val, day_val, hour_val, min_val, sec_val);
+}
+
+// var datetext = $feature.Date;
+var date_text = "Mon Sep 17 13:11:06 +0000 2018";
+return Convert2DateTime(date_text);
